@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD COMPARTIDO -->
+  <%- include("../partials/head") %>
+
+  <body>
+    <!-- HEADER COMPARTIDO -->
+    <%- include("../partials/header") %>
+  
+    <script src="https://kit.fontawesome.com/6cd48854d2.js" crossorigin="anonymous"></script>
+
+<main>
+  <div class="contenedor">
+
+    <div class="top">
+
+      <h3>Carrito de compras</h3>
+
+    </div>
+
+    <div class="categorias">
+
+      <strong>Producto</strong>
+      <strong>Cantidad</strong>
+      <strong>Precio</strong>
+      <strong>Eliminar</strong>
+
+    </div>
+
+    <hr>
+
+    <div class="categorias">
+      <p>Plan Deportistas 1</p>
+      <input class="cantidad" type="number" value="1">
+      <p>$100.00</p>
+      <div class="x-borrar">
+        <button class="buttonClass" type="reset">X</button>
+        </div>
+    </div>
+
+    <div class="cupon">
+      <input type="text" placeholder="Código de cupón">
+      <button>Aplicar Cupón</button>
+    </div>
+
+    <div class="bottom">
+      <h3 class="titulo-bottom">Total del carrito </h3>
+    </div>
+
+    <div class="contenedor-detalle">
+      <div class="detalle-carrito">
+        <strong>Subtotal</strong>
+        <strong>IVA</strong>
+        <strong>Total</strong>
+      </div>
+
+      <div class="importes-carrito">
+        <p>$100.00</p>
+        <p>$0.00</p>
+        <p>$100.00</p>
+      </div>
+    </div>
+
+    <div class="end">
+
+      <button>Finalizar Compra</button>
+
+    </div>
+  </div>
+
+
+</main>
+
+  <!-- FOOTER COMPARTIDO -->
+  <%- include("../partials/footer") %>
+  
+</body>
+
+</html>

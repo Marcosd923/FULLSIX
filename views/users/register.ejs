@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- HEAD COMPARTIDO -->
+  <%- include("../partials/head") %>
+
+  <body>
+    <!-- HEADER COMPARTIDO -->
+   <%- include("../partials/header") %>
+
+  <script src="https://kit.fontawesome.com/6cd48854d2.js" crossorigin="anonymous"></script>
+
+  <main>
+
+    <div class="form-contenedor">
+      <form action="/register" method="POST" enctype="multipart/form-data" class="formulario">
+        <h4 class="titulo-registrate">¿No tenés cuenta? Registrate</h4>
+        <div class="form-ingresa">
+          <input type="text" name="firstname" id="firstname" placeholder="Nombre" required minlength="2" maxlength="25"
+            pattern="[A-Za-z]+" title="Solo letras">
+            <span></span>
+            <input type="text" name="lastname" id="lastname"placeholder="Apellido" required minlength="2" maxlength="25"
+            pattern="[A-Za-z]+" title="Solo letras">
+            <span></span>
+          <input type="email" name="email" id="email" placeholder="E-mail" required>
+          <span></span>
+          <input type="password" name="password" id="password" placeholder="Contraseña" required minlength="8" maxlength="15"
+             title="Letras y números. Tamaño mínimo: 8. Tamaño máximo: 15">
+            <span></span>
+           <div class="contenedor-foto-perfil">
+            <label for="image" class="foto-perfil" >Tu foto de perfil</label>
+                <input type="file" name="image" accept=".jpg">
+                <span></span></div>
+          <div class="form-leyenda">
+            <label>¿Ya estás registrado? <a href="/login">Ingresá aquí</a></label>
+          </div>
+          <div class="contenedor-boton-ingresa">
+            <button class="boton-ingresa" type="submit">Registrarme</button>
+            <p class="error-message" id="error-message"></p>
+          </div>
+      </form>
+    </div>
+
+  </main>
+
+  <!-- FOOTER COMPARTIDO -->
+  <script src="/js/register.js"></script>
+  
+</body>
+
+</html>

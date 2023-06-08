@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- HEAD COMPARTIDO -->
+  <%- include("../partials/head") %>
+
+  <body>
+    <!-- HEADER COMPARTIDO -->
+    <%- include("../partials/header") %>
+  
+  <script src="https://kit.fontawesome.com/6cd48854d2.js" crossorigin="anonymous"></script>
+
+  <main>
+    <div class="form-contenedor">
+      <form action="/login" method="POST" class="formulario" id="formulario">
+        <h4 class="titulo-ingresa">Ingresá</h4>
+        <div class="form-ingresa">
+          <input type="email" name="email" placeholder="E-mail" required>
+          <span></span>
+          <input type="password" name="password" placeholder="Contraseña" required>
+          <span></span>
+          <div class="contenedor-recordarme">
+            <input class="checkbox-recordarme" type="checkbox" name="remember">
+            <div class="recordarme">Recordarme</div></input>
+          </div>
+          <div class="form-leyenda">
+            <label>¿Todavía no tenés cuenta? <a href="/register">Registrarme |</a><a href="/register"> Olvidé mi
+                contraseña</a></label>
+          </div>
+          <div class="contenedor-boton-ingresa">
+            <button class="boton-ingresa" type="submit">Ingresar</button>
+            <div class="error-validation">
+              <p class="error-message" id="error-message"></p>
+            </div>
+          </div>
+      </form>
+
+      <!-- defino la variable error para que lo muestre en la vista en caso de que haya -->
+      <% if (typeof error !== 'undefined') { %>
+        <p class="error-message"><%= error %></p>
+      <% } %>
+    </div>
+
+  </main>
+
+  <!-- FOOTER COMPARTIDO -->
+  <script src="/js/login.js"></script>
+</body>
+
+</html>

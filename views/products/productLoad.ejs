@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- HEAD COMPARTIDO -->
+  <%- include("../partials/head") %>
+
+  <body>
+    <!-- HEADER COMPARTIDO -->
+   <%- include("../partials/header") %>
+
+  <script src="https://kit.fontawesome.com/6cd48854d2.js" crossorigin="anonymous"></script>
+
+  <main>
+
+    <div class="form-load">
+      <form action="/products" method="POST" enctype="multipart/form-data">
+        <h4 class="titulo-registrate">Carga de Plan</h4>
+            <div class="form-ingresa">
+                
+                <label class="label-form-load" for="name">Nombre del plan</label>
+                <input class="input-form-load" type="text" name="name" id="name" placeholder="Nombre" required>
+                <span></span>
+                
+                <label class="label-form-load" for="description">Descripcion del plan</label>
+                <textarea class="input-form-load" name="description" id="description" placeholder="Descripción" required></textarea>
+                <span></span>
+                <label class="label-form-load" for="duration">Duración del plan</label>
+                <input class="input-form-load" type="text" name="duration" id="duration" placeholder="Duración" required minlength="5" maxlength="25">
+                <span></span>
+                <label class="label-form-load" for="image">Imagen del plan</label>
+                <input class="input-form-load" type="file" name="image" id="image" accept=".jpg">
+                <span></span>
+                
+                <label class="label-form-load" for="category">Categoria del plan</label>
+                <br></br>
+                <div class="contenedor-categoria">
+                <% categorias.forEach(categoria => { %>
+                <input  class="input-form-load" type="radio" name="category" id="category"  value="<%= categoria.id %>"><%= categoria.name %>
+                <% }) %>
+                </div>
+                <br></br>
+                <label class="label-form-load" for="price">Precio del plan</label>
+                <input  class="input-form-load" type="text" name="price" id="price" placeholder="Precio" required minlength="1" maxlength="15"
+                pattern="[A-Za-z0-9]+" title="Solo números">
+                <span></span>
+
+                <div class="contenedor-boton-carga">
+                    <button class="boton-carga" type="submit">Cargar</button>
+                </div>
+            </div>
+      </form>
+    </div>
+
+  </main>
+
+  <!-- FOOTER COMPARTIDO -->
+  <%- include("../partials/footer") %>
+  <script src="/js/productLoad.js"></script>
+  
+</body>
+
+</html>
